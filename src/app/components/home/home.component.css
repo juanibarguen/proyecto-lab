@@ -1,0 +1,7 @@
+.container-products {
+    display: flex;
+}
+
+.product {
+    background-color: lightseagreen;    
+}

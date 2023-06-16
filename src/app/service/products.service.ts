@@ -9,7 +9,7 @@ export class ProductsService {
   constructor() { }
 
   // Definimos el array de elementos de tipo Producto
-  productos: Product[] = [
+  products: Product[] = [
     {
       id: 1,
       nombre: "Producto 1",
@@ -91,5 +91,9 @@ export class ProductsService {
       stock: 4
     }
   ];
+
+  getProductos(): Product[] {
+    return this.products;
+  }
   
 }
