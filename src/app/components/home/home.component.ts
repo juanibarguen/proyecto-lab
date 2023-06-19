@@ -22,6 +22,25 @@ export class HomeComponent implements OnInit {
     
   }
 
+
+  increaseQuantity(product: ProductInCart) {
+    if (product.cantidad < product.stock) {
+      product.cantidad += 1;
+    }else {
+      console.log("No hay stock suficiente");
+      
+    }
+  }
+  
+  decreaseQuantity(product: ProductInCart) {
+    if (product.cantidad > 1) {
+      product.cantidad -= 1;
+    }else {
+      console.log("No se puede restar mas de 1");
+      
+    }
+  }
+
   
   addToCart(id: number) {
     const productToAdd = this.products.find(product => product.id === id);
@@ -38,6 +57,8 @@ export class HomeComponent implements OnInit {
       }
   
       productToAdd.stock -= 1;
+    }else {
+      alert(`No hay stock`)
     }
   
     console.log(this.productsCart);
