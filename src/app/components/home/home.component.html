@@ -18,12 +18,12 @@
       <p class="product-cart-data-title">{{ product.nombre }}</p>
       <p class="product-cart-data-price">${{ product.precio }}</p>
       <div class="product-cart-count">
-        <button (click)="decreaseQuantity(product)">-</button>
+        <button class="product-cart-button-count" (click)="decreaseQuantity(product)">-</button>
         <p>{{ product.cantidad }}</p>
-        <button (click)="increaseQuantity(product)">+</button>
+        <button class="product-cart-button-count" (click)="increaseQuantity(product)">+</button>
       </div>
 
-      <button (click)="deleteComponentCart(product.id)">Eliminar</button>
+      <button class="product-cart-button-delete" (click)="deleteComponentCart(product.id)">X</button>
 
     </div>
   </div>
