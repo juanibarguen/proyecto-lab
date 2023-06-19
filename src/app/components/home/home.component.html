@@ -4,8 +4,8 @@
       <div>
         <p>{{ product.nombre }}</p>
         <p>${{ product.precio }}</p>
-        <!-- <p>{{ product.descripcion }}</p> -->
-        <button (click)="addToCart(product.id)">Agregar</button>
+        <button *ngIf="isProductInCart(product.id)" (click)="deleteComponentCart(product.id)">Eliminar</button>
+      <button *ngIf="!isProductInCart(product.id)" (click)="addToCart(product.id)">Agregar</button>
       </div>
     </div>
 </div>

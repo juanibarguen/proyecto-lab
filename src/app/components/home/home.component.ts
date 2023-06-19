@@ -9,6 +9,7 @@ import { ProductsService } from 'src/app/service/products.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+
   // Creamos un array de elementos de tipo Producto para agregar los elementos que vengan del servicio
   products: Product[] = [];
   productsCart: ProductInCart[] = [];
@@ -21,6 +22,11 @@ export class HomeComponent implements OnInit {
     console.log(this.products);
     
   }
+
+  isProductInCart(productId: number): boolean {
+    return this.productsCart.some(product => product.id === productId);
+  }
+  
 
 
   increaseQuantity(product: ProductInCart) {
@@ -52,11 +58,13 @@ export class HomeComponent implements OnInit {
       
       if (existingProduct) {
         existingProduct.cantidad += 1;
+        console.log(`el producto ya esta en el carrito`);
+        
       } else {
         this.productsCart.push(newProduct);
       }
   
-      productToAdd.stock -= 1;
+      // productToAdd.stock -= 1;
     }else {
       alert(`No hay stock`)
     }
