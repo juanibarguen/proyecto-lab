@@ -1,9 +1,9 @@
 <div class="container-products">
     <div class="product" *ngFor="let product of products">
+      <img [src]="product.imagen" alt="Imagen del producto">
       <div>
-        <img [src]="product.imagen" alt="Imagen del producto">
         <p>{{ product.nombre }}</p>
-        <p>{{ product.precio }}</p>
+        <p>${{ product.precio }}</p>
         <!-- <p>{{ product.descripcion }}</p> -->
         <button (click)="addToCart(product.id)">Agregar</button>
       </div>
@@ -15,9 +15,14 @@
   <h3>carrito</h3>
   <div class="product" *ngFor="let product of productsCart">
     <div>
-      <p>{{ product.id }}</p>
       <p>{{ product.nombre }}</p>
-      <p>{{ product.descripcion }}</p>
+      <p>{{ product.precio }}</p>
+      <div class="product-cart-count">
+        <p (click)="decreaseQuantity(product)">-</p>
+        <p>{{ product.cantidad }}</p>
+        <p (click)="increaseQuantity(product)">+</p>
+      </div>
+
       <button (click)="deleteComponentCart(product.id)">Eliminar</button>
 
     </div>
