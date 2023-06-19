@@ -32,7 +32,7 @@ export class ProductsService {
       Recommended PSU 450W
       Power Connectors 8 pin*1
       Output DisplayPort 1.4a *2 / HDMI 2.1 *2`,
-      precio: 199.783,
+      precio: "199.783",
       stock: 5
     },
     {
@@ -62,7 +62,7 @@ export class ProductsService {
       Battery Integrated 38Wh
       Max Battery Life MobileMark 2018: 7.5 hr (38Wh)
       Power Adapter 65W Round Tip (3-pin)`,
-      precio: 329.000,
+      precio: "329.000",
       stock: 10
     },
     {
@@ -88,7 +88,7 @@ export class ProductsService {
       Pivote : Si
       Ajuste en altura : Si
       Freesync/Gsync : G-Sync`,
-      precio: 139.951,
+      precio: "139.951",
       stock: 12
     },
     {
@@ -125,7 +125,7 @@ export class ProductsService {
       Conectores de poder 8 pines * 1 + 6 pines * 1
       Salida DisplayPort 1.4a * 2 HDMI 2.1 * 2
       Soporte SLI N / A`,
-      precio: 313.284,
+      precio: "313.284",
       stock: 0
     },
     {
@@ -145,7 +145,7 @@ export class ProductsService {
       Jugá fluidamente y sin esfuerzo. AMD FreeSync Premium cuenta con tecnología de sincronización adaptativa que reduce el tearing, el stuttering y la latencia de entrada.
       
       `,
-      precio: 199.783,
+      precio: "199.783",
       stock: 8
     }
   ];
