@@ -51,7 +51,7 @@ export class HomeComponent implements OnInit {
     if (product.cantidad < product.stock) {
       product.cantidad += 1;
     }else {
-      console.log("No hay stock suficiente");
+      alert("No hay stock suficiente");
       
     }
   }
@@ -65,10 +65,6 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  // precioPorCantidad(precio:number, cantidad: number) {
-  //   let total = precio*cantidad;
-  //   return total.toFixed(3)
-  // }
 
   precioPorCantidad(precio: number, cantidad: number): string {
     const total = precio * cantidad;
@@ -85,7 +81,7 @@ export class HomeComponent implements OnInit {
       
       if (existingProduct) {
         existingProduct.cantidad += 1;
-        console.log(`el producto ya esta en el carrito`);
+        alert(`el producto ya esta en el carrito`);
         
       } else {
         this.productsCart.push(newProduct);
@@ -93,7 +89,7 @@ export class HomeComponent implements OnInit {
   
       // productToAdd.stock -= 1;
     }else {
-      alert(`No hay stock`)
+      alert(`No hay stock suficiente`)
     }
   
     console.log(this.productsCart);

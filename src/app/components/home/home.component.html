@@ -27,6 +27,6 @@
 
     </div>
   </div>
-  <h4>Precio total: {{calcularPrecioTotal()}}</h4>
+  <h4 *ngIf="productsCart.length > 0">Precio total: {{calcularPrecioTotal()}}</h4>
   <p class="cart-vacio" *ngIf="productsCart.length == 0">Carrito vacio</p>
 </div>
