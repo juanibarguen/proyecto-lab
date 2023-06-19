@@ -13,6 +13,9 @@ export class HomeComponent implements OnInit {
   // Creamos un array de elementos de tipo Producto para agregar los elementos que vengan del servicio
   products: Product[] = [];
   productsCart: ProductInCart[] = [];
+
+  precioTotal: string = "";
+
   constructor(private productService: ProductsService) { }
 
   ngOnInit() {
@@ -22,6 +25,21 @@ export class HomeComponent implements OnInit {
     console.log(this.products);
     
   }
+
+  calcularPrecioTotal(): string {
+    let total = 0;
+    for (const product of this.productsCart) {
+      const precioNumerico = parseFloat(product.precio);
+      const subtotal = precioNumerico * product.cantidad;
+      total += subtotal;
+    }
+  
+    const precioTotalFormatted = total.toLocaleString();
+    this.precioTotal = precioTotalFormatted;
+    return precioTotalFormatted;
+  }
+  
+  
 
   isProductInCart(productId: number): boolean {
     return this.productsCart.some(product => product.id === productId);
