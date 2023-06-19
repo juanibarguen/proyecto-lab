@@ -47,6 +47,15 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  // precioPorCantidad(precio:number, cantidad: number) {
+  //   let total = precio*cantidad;
+  //   return total.toFixed(3)
+  // }
+
+  precioPorCantidad(precio: number, cantidad: number): string {
+    const total = precio * cantidad;
+    return total.toLocaleString('es-ES');
+  }
   
   addToCart(id: number) {
     const productToAdd = this.products.find(product => product.id === id);
