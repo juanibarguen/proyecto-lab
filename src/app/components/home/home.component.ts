@@ -10,6 +10,10 @@ import { ProductsService } from 'src/app/service/products.service';
 })
 export class HomeComponent implements OnInit {
 
+  compraFinal: boolean = false
+
+
+
   // Creamos un array de elementos de tipo Producto para agregar los elementos que vengan del servicio
   products: Product[] = [];
   productsCart: ProductInCart[] = [];
@@ -24,6 +28,10 @@ export class HomeComponent implements OnInit {
     // Mostramos la lista de elementos por consola
     console.log(this.products);
     
+  }
+
+  compraFinalSwitch() {
+      this.compraFinal = true;
   }
 
   calcularPrecioTotal(): string {
