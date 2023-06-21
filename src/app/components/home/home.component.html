@@ -28,9 +28,10 @@
     </div>
   </div>
   <h4 *ngIf="productsCart.length > 0">Precio total: {{calcularPrecioTotal()}}</h4>
+  <button *ngIf="productsCart.length > 0" (click)="compraFinalSwitch()">Comprar</button>
   <p class="cart-vacio" *ngIf="productsCart.length == 0">Carrito vacio</p>
 </div>
 
-<div class="finalizar-compra">
+<div class="finalizar-compra" *ngIf="compraFinal">
     <app-finalizar-compra></app-finalizar-compra>
 </div>
