@@ -1,0 +1,62 @@
+<div class="container-products">
+    <div class="product" *ngFor="let product of products">
+      <img [src]="product.imagen" alt="Imagen del producto">
+      <div class="content-product">
+        <p>{{ product.nombre }}</p>
+        <p>${{ product.precio }}</p>
+
+        <button *ngIf="isProductInCart(product.id)" (click)="deleteComponentCart(product.id)" class="button-delete-cart">
+          <div class="texts-button-delete">
+            <span class="material-symbols-outlined">shopping_cart</span>
+            <p>Eliminar</p>
+          </div>
+        </button>
+
+      <button *ngIf="!isProductInCart(product.id)" (click)="addToCart(product.id)" class="button-add-cart">
+        <div class="texts-button">
+          <span class="material-symbols-outlined">shopping_cart</span>
+          <p>Agregar</p>
+        </div>
+      </button>
+      </div>
+    </div>
+</div>
+
+
+<div class="container-cart">
+  <h3>Carrito</h3>
+
+  <div class="product-cart titles" *ngIf="productsCart.length > 0">
+    <div class="product-cart-data product-cart-data-titles">
+      <div class="pinc-titles">
+        <p class="product-cart-data-title">Producto</p>
+      </div>
+      <p class="product-cart-data-price">Precio</p>
+      <div class="product-cart-count">Cantidad</div>
+
+      <div class="product-cart-button-delete titles">Eliminar</div>
+
+    </div>
+  </div>
+
+  <div class="product-cart" *ngFor="let product of productsCart">
+    <div class="product-cart-data">
+      <div class="pinc">
+        <img class="product-cart-data-image" [src]="product.imagen" alt="Imagen del producto">
+        <p class="product-cart-data-title">{{ product.nombre }}</p>
+      </div>
+      <p class="product-cart-data-price">${{ product.precio }}</p>
+      <div class="product-cart-count">
+        <button class="product-cart-button-count" (click)="decreaseQuantity(product)">-</button>
+        <p>{{ product.cantidad }}</p>
+        <button class="product-cart-button-count" (click)="increaseQuantity(product)">+</button>
+      </div>
+
+      <button class="product-cart-button-delete" (click)="deleteComponentCart(product.id)">X</button>
+
+    </div>
+  </div>
+  <h4 *ngIf="productsCart.length > 0">Precio total: {{calcularPrecioTotal()}}</h4>
+  <a routerLink="/finalizar-compra" *ngIf="productsCart.length > 0" (click)="compraFinalSwitch()" class="btn-finalizar-compra">Comprar</a>
+  <p class="cart-vacio" *ngIf="productsCart.length == 0">Carrito vacio</p>
+</div>
