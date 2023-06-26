@@ -1,0 +1,85 @@
+
+<section class="finalizar-compra-container">
+    <div class="productos">
+
+        <div class="product-cart" *ngFor="let product of productsCart">
+            <div class="product-data">
+                <img [src]="product.imagen" alt="Imagen del producto">
+                <p>{{product.nombre}}</p>
+            </div>
+            <p class="data-cantidad">Cantidad: {{product.cantidad}}</p>
+            <p class="data-precio">Precio p/u: {{product.precio}}</p>
+        </div>
+
+        <p *ngIf="productsCart.length > 0">Precio Total: {{precioTotal}}</p>
+    </div>
+    <div  class="medios-de-pago">
+        <p>Medios de Pago</p>
+        <div  class="cta-medios-de-pago">
+            <button (click)="transf()">Transferencia</button>
+            <button (click)="mp()">Mercado Pago</button>
+            <button (click)="debit()">Tarjeta Debito</button>
+        </div>
+
+        <div *ngIf="debito" class="formulario-debit">
+            <form>
+                <input type="text" name="" id="" placeholder="Nombre del titular">
+                <br>
+                <input type="text" name="" id="" placeholder="DNI">
+                <br>
+
+                <label for="nombre">Tarjeta:</label>
+                <br>
+                <input type="checkbox" id="miCheckbox" name="miCheckbox">
+                <label for="miCheckbox">Visa</label>
+                <br>
+                <input type="checkbox" id="miCheckbox" name="miCheckbox">
+                <label for="miCheckbox">MasterCard</label>
+                <br>
+                <label for="numero">Número de tarjeta:</label>
+                <input type="text">
+                <br>
+                <label for="fecha">Caducidad:</label>
+                <select id="fecha" name="fecha" required>
+                  <option value="">Seleccionar</option>
+                  <option value="01/2023">01/2023</option>
+                  <option value="02/2023">03/2027</option>
+                 Agrega aquí más opciones de fechas de expiración
+                </select>
+                <br>  
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" required  maxlength="3">
+                <br>
+                <button type="submit">Finalizar Compra</button>
+                
+              </form>
+              
+        </div>
+
+        <div *ngIf="mercadoPago" class="mercado-pago-qr">
+            <p>ESCANEÁ</p>
+            <p>Y PAGÁ</p>
+            <div class="imagen-qr">
+                <img src="assets/qr.png" alt="">
+            </div>
+        </div>
+
+        <div  *ngIf="transferencia" class="transferencia">
+            <h3>Transferencia</h3>
+            <div class="datos">
+                <p>Titular: Nombre</p>
+            <p>Nº de cuenta: 111111111</p>
+            <p>Banco: Santander</p>
+            <p>CVU:123456789</p>
+            <p>ALIAS: NOMBRE.BANCO</p>
+            </div>
+            <p>Una vez realizada la transferencia deberas subir el comprobante de pago, recibiras un mail cuando se confirme la compra</p>
+            <div class="comprobante">
+                <p>Adjuntar comprobante: </p>
+                <input type="file" name="" id=""  accept="image/png, image/gif, image/jpeg">
+            </div>
+            <input type="submit">
+        </div>
+
+    </div>
+</section>

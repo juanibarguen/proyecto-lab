@@ -1,0 +1,101 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.finalizar-compra-container {
+  background-color: #fff;
+  width: 90%;
+  margin:  0 auto;
+  min-height: 500px;
+  display: flex;
+}
+
+.productos {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+}
+
+.medios-de-pago {
+  background-color: #dcdcdc;
+  width: 450px;
+}
+
+.product-data {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.product-data img {
+  height: 50px;
+}
+
+.data-cantidad, .data-precio {
+  color: #414141;
+}
+.imagen-qr {
+  display: flex;
+  justify-content: center;
+}
+
+.imagen-qr img {
+  width: 250px;
+}
+
+.mercado-pago-qr p {
+  padding-left: 20px;
+  color: #162D8C;
+  font-size: 40px;
+    font-weight: 900;
+}
+
+.transferencia{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 90%;
+}
+
+
+
+@media screen and (max-width:770px) {
+
+  
+  .finalizar-compra-container {
+    flex-direction: column;
+    min-height: 0;
+  }
+  .medios-de-pago {
+    width: 100%;
+  }
+
+  .transferencia {
+    height: 500px;
+  }
+
+  .mercado-pago-qr {
+    height: auto;
+    padding: 20px;
+  }
+
+  .formulario-debit {
+    height: auto;
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width:330px)  { 
+  .mercado-pago-qr > p {
+      padding: 0;
+      font-size: 30px;
+  }
+
+  .imagen-qr img {
+    width: 200px;
+  }
+}
