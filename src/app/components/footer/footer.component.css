@@ -1,0 +1,41 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.footer {
+    width: 100%;
+    padding: 20px;
+    /* height: 300px; */
+    background-color: #fff;
+    justify-content: space-evenly;
+    display: flex;
+
+}
+
+.ubicacion svg {
+    width: 30px;
+}
+
+
+h6 {
+    font-size: 30px;
+}
+
+.sucursal {
+    width: 230px;
+}
+.tel {
+    display: flex;
+    column-gap: 10px;
+  }
+  .ubicacion {
+    display: flex;
+    column-gap: 10px;
+  }
+
+  @media screen and (max-width: 860px) {
+        .footer {
+            flex-direction: column;
+        }
+  }

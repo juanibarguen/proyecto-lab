@@ -10,6 +10,7 @@
   margin:  0 auto;
   min-height: 500px;
   display: flex;
+  margin-bottom: 20px;
 }
 
 .productos {

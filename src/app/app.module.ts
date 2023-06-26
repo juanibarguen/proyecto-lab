@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FinalizarCompraComponent } from './components/finalizar-compra/finalizar-compra.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 const routes: Routes = [
@@ -17,7 +18,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     HomeComponent,
-    FinalizarCompraComponent
+    FinalizarCompraComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
