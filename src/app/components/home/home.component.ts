@@ -62,8 +62,6 @@ export class HomeComponent implements OnInit {
     }
   }
 
-
-
   addToCart(id: number) {
     const productToAdd = this.products.find(product => product.id === id);
 
