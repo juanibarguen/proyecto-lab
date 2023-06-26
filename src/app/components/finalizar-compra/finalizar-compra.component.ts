@@ -13,9 +13,9 @@ export class FinalizarCompraComponent {
 
   productsCart: ProductInCart[] = [];
 
-  transferencia: boolean = false;
+  transferencia: boolean = true;
   mercadoPago: boolean = false;
-  debito: boolean = true;
+  debito: boolean = false;
 
   precioTotal = this.productService.precioTotal
 
