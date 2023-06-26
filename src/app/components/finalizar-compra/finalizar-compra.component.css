@@ -100,3 +100,16 @@
     width: 200px;
   }
 }
+
+
+.go-to-home {
+  padding: 5px 15px;
+  margin-left: 60px;
+  margin-bottom: 20px;
+  background-color: #162D8C;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  width: 100px;
+  color: #fff;
+}
