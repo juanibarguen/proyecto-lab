@@ -29,7 +29,6 @@ export class HomeComponent implements OnInit {
 
   calcularPrecioTotal(): string {
 
-    
     let total = 0;
     for (const product of this.productService.productsCart) {
       const precioNumerico = parseFloat(product.precio);
@@ -45,7 +44,6 @@ export class HomeComponent implements OnInit {
 
   isProductInCart(productId: number): boolean {
     return this.productService.productsCart.some(product => product.id === productId);
-
   }
 
   increaseQuantity(product: ProductInCart) {
@@ -60,14 +58,11 @@ export class HomeComponent implements OnInit {
     if (product.cantidad > 1) {
       product.cantidad -= 1;
     } else {
-      console.log("No se puede restar más de 1");
+      alert("No se puede restar más de 1");
     }
   }
 
-  precioPorCantidad(precio: number, cantidad: number): string {
-    const total = precio * cantidad;
-    return total.toLocaleString('es-ES');
-  }
+
 
   addToCart(id: number) {
     const productToAdd = this.products.find(product => product.id === id);

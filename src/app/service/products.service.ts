@@ -7,6 +7,7 @@ import { ProductInCart } from '../models/productInCart.interface';
 })
 export class ProductsService {
 
+  productsCart: ProductInCart[] = []; // Nuevo array para el carrito de compras
 
   constructor() { }
 
@@ -153,8 +154,7 @@ export class ProductsService {
     }
   ];
 
-  productsCart: ProductInCart[] = []; // Nuevo array para el carrito de compras
-
+  
   getProductos(): Product[] {
     return this.products;
   }
