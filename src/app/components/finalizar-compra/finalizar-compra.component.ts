@@ -44,4 +44,8 @@ export class FinalizarCompraComponent {
     this.transferencia = false
     this.mercadoPago = false
   }
+
+  compraExitosa () {
+    alert("Compra Exitosa")
+  }
 }

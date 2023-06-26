@@ -6,4 +6,3 @@ export interface Product {
     precio: string;
     stock: number;
   }
-  
